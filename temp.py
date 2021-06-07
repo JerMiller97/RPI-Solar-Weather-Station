@@ -19,11 +19,11 @@ def get_temperature():
 
 now = datetime.now()
 temp = get_temperature()
-now_time = now.strftime("%d/%m/%Y %H:%M")
+now_time = now.strftime("%Y-%m-%d %H:%M")
 log_line = open("temp.csv", "a")
 log_line.write(str(temp) + "," + now_time + "\n")
 log_line.close()
-now_datetime = now.strftime("%Y-%m/%d %H:%M")
+now_datetime = now.strftime("%Y-%m-%d %H:%M")
 params = (
     ('date', str(now_datetime)),
     ('temp', str(temp)),

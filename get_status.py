@@ -23,12 +23,12 @@ def get_status():
 now = datetime.now()
 battery_level = get_battery_level()
 battery_status = get_status()
-now_time = now.strftime("%d/%m/%Y %H:%M")
+now_time = now.strftime("%Y-%m-%d %H:%M")
 log_line = open("battery_log.csv", "a")
 log_line.write(str(battery_level) + "," + now_time + "\n")
 log_line.close()
 
-now_datetime = now.strftime("%Y-%m/%d %H:%M")
+now_datetime = now.strftime("%Y-%m-%d %H:%M")
 params = (
     ('date', str(now_datetime)),
     ('charge', str(battery_level)),
