@@ -13,9 +13,10 @@ if ($conn->connect_error) {
 
 $date = $_GET['date'];
 $charge = $_GET['charge'];
+$batt_status = $_GET['batt_status'];
 
-$sql = "INSERT INTO battery_status (date, charge_level)
-VALUES ('$date', '$charge')";
+$sql = "INSERT INTO battery_status (date, charge_level, batt_status)
+VALUES ('$date', '$charge', '$batt_status')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
