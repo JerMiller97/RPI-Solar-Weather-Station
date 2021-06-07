@@ -2,8 +2,7 @@
 <style>
 body {
   text-align: center;
-  font-size: 50px;
-
+  font-size: 48px;
 }
 
 </style>
@@ -26,7 +25,7 @@ $sql = "SELECT * FROM `outside_temperature` ORDER BY `outside_temperature`.`date
 $result = $conn->query($sql);
 
 while($row  = $result->fetch_assoc()){
-    echo $row['temperature']."°F at " . $row['date'];
+    echo $row['temperature']."°F outside at " . $row['date'];
   }
 
 echo "</br>";
@@ -34,7 +33,7 @@ $sql = "SELECT * FROM `battery_status` ORDER BY `battery_status`.`date` DESC lim
 $result = $conn->query($sql);
 
 while($row  = $result->fetch_assoc()){
-    echo $row['charge_level']."% charged at " . $row['date'];
+    echo $row['charge_level']."% charged at " . $row['date'] . "</br>Battery is currently ".$row['batt_status'];
   }
 
 
