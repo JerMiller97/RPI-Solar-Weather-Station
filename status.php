@@ -21,7 +21,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM `outside_temperature` ORDER BY `outside_temperature`.`date` DESC limit 1";
+$sql = "SELECT * FROM `outside_temperature` ORDER BY `outside_temperature`.`temp_id` DESC limit 1";
 $result = $conn->query($sql);
 
 while($row  = $result->fetch_assoc()){
@@ -29,11 +29,20 @@ while($row  = $result->fetch_assoc()){
   }
 
 echo "</br>";
-$sql = "SELECT * FROM `battery_status` ORDER BY `battery_status`.`date` DESC limit 1";
+$sql = "SELECT * FROM `battery_status` ORDER BY `battery_status`.`status_id` DESC limit 1";
 $result = $conn->query($sql);
 
 while($row  = $result->fetch_assoc()){
-    echo $row['charge_level']."% charged at " . $row['date'] . "</br>Battery is currently ".$row['batt_status'];
+    if ($row['batt_status'] == "CHARGING_FROM_IN") {
+        $batt_status_text = "charging";
+    }
+    elseif ($row['batt_status'] == "NORMAL") {
+        $batt_status_text = "<i>dis</i>charging";
+    }
+    else {
+        $batt_status_text = "unknown";
+    }
+    echo $row['charge_level']."% charged at " . $row['date'] . "</br>Battery is currently <b>".$batt_status_text."</b>.";
   }
 
 
