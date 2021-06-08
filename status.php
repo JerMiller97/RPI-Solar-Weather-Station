@@ -48,3 +48,7 @@ while($row  = $result->fetch_assoc()){
 
 $conn->close();
 ?> 
+
+<html>
+<script src="http://192.168.88.50:3000/embed.js" data-charted="7ca6694"></script>
+</html>
