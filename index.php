@@ -51,5 +51,7 @@ $conn->close();
 ?> 
 
 <html>
-<script src="http://192.168.88.50:3000/embed.js" data-charted="7ca6694"></script>
+<div style="height: 100px">
+<script src="http://192.168.88.50:3000/embed.js" data-charted="f5bccea"></script>
+</div>
 </html>
