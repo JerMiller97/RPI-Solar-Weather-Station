@@ -11,11 +11,11 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT date,temperature FROM `outside_temperature` ORDER BY `outside_temperature`.`temp_id` ASC LIMIT 432";
+$sql = "SELECT date,charge_level FROM `battery_status` ORDER BY `battery_status`.`status_id` ASC LIMIT 432";
 $result = $conn->query($sql);
-echo "\"Date\",\"Outside Temperature\"";
+echo "\"Date\",\"Charge Level\"";
 while($row  = $result->fetch_assoc()){
-    echo "\n\"".$row['date']."\",\"" . $row['temperature']."\"";
+    echo "\n\"".$row['date']."\",\"" . $row['charge_level']."\"";
   }
 
 
