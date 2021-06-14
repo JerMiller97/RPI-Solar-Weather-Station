@@ -6,6 +6,9 @@ body {
 }
 
 </style>
+<head>
+  <meta http-equiv="refresh" content="150">
+</head> 
 </html>
 
 <?php
