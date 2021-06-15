@@ -20,6 +20,7 @@ def get_status():
     data_block = data_block.get('data')
     battery_status = data_block.get('battery')
     return battery_status
+
 now = datetime.now()
 battery_level = get_battery_level()
 battery_status = get_status()
