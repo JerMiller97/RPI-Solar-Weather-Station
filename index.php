@@ -62,4 +62,7 @@ $conn->close();
 </br>
 <script src="http://192.168.88.50:3000/embed.js" data-charted="f5bccea"></script>
 <script src="http://192.168.88.50:3000/embed.js" data-charted="aa8cb98"></script>
+</br>
+<p><a href="more_data.php">more data >>></a></p>
+
 </html>
